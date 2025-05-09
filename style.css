@@ -136,6 +136,14 @@ h2 {
   color: #009879;
 }
 
+.panels h3 {
+  text-align: justify;
+}
+
+.panels p {
+  text-align: justify;
+}
+
 /* Estilos para la sección de bienvenida (modificado para tonos verdes) */
 .welcome-section {
   background-color: #d4edda; /* Un verde muy claro de fondo */
@@ -155,7 +163,7 @@ h2 {
 
  .welcome-section .welcome-text,
  .welcome-section .further-text {
-  color: #28a745; /* Un verde más brillante para el texto principal */
+  color: #218838; /* Un verde más brillante para el texto principal */
   font-size: 1.1em;
   line-height: 1.6;
   margin-bottom: 20px;
