@@ -137,10 +137,12 @@ h2 {
 }
 
 .panels h3 {
+  color: #007a5e;
   text-align: justify;
 }
 
 .panels p {
+  color: #333;
   text-align: justify;
 }
 
@@ -153,39 +155,39 @@ h2 {
   text-align: center;
   margin-bottom: 20px;
   border: 1px solid #c3e6cb; /* Borde sutil en un tono de verde */
- }
+}
 
- .welcome-section h1 {
+.welcome-section h1 {
   color: #155724; /* Un verde oscuro para el título */
   font-size: 2.5em;
   margin-bottom: 15px;
- }
+}
 
- .welcome-section .welcome-text,
- .welcome-section .further-text {
+.welcome-section .welcome-text,
+.welcome-section .further-text {
   color: #218838; /* Un verde más brillante para el texto principal */
   font-size: 1.1em;
   line-height: 1.6;
   margin-bottom: 20px;
- }
+}
 
- .welcome-section .feature-list {
+.welcome-section .feature-list {
   list-style: none;
   padding: 0;
   margin-bottom: 25px;
- }
+}
 
- .welcome-section .feature-list li {
+.welcome-section .feature-list li {
   color: #218838; /* Otro tono de verde para los items de la lista */
   font-size: 1em;
   margin-bottom: 10px;
- }
+}
 
- .welcome-section .feature-list li span[role="img"] {
+.welcome-section .feature-list li span[role="img"] {
   margin-right: 8px;
- }
+}
 
- .view-downloads-btn {
+.view-downloads-btn {
   background-color: #28a745; /* Verde brillante para el botón */
   color: #fff;
   border: none;
@@ -195,13 +197,13 @@ h2 {
   font-size: 1.1em;
   transition: background-color 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sutil sombra al botón */
- }
+}
 
- .view-downloads-btn:hover {
+.view-downloads-btn:hover {
   background-color: #1e7e34; /* Tono de verde más oscuro al pasar el ratón */
- }
+}
 
- /* Ocultar las secciones de descarga inicialmente (sin cambios) */
- .warpper {
+/* Ocultar las secciones de descarga inicialmente (sin cambios) */
+.warpper {
   display: none;
- }
+}
