@@ -1,209 +1,468 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@600;700&display=swap');
+
 /* Estilos base de la página*/
 body {
-  background-image: url("/bg.png");
-  background-repeat: repeat;
-  background-size: 100%;
-  font-family: "Lato", sans-serif;
+    background-image: url("bg.png");
+    background-repeat: repeat;
+    background-size: cover; /* Ajuste para que la imagen cubra todo el fondo */
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7; /* Mayor espacio entre líneas para mejor lectura */
+    color: #333; /* Color de texto general */
+    min-height: 100vh; /* Asegura que el body ocupe al menos la altura de la ventana */
+    display: flex;
+    flex-direction: column;
 }
 
-h2 {
-  color: #fff;
-  text-align: center;
-  font-size: 2em;
-  margin: 20px 0;
+/* Encabezado del sitio */
+.site-header {
+    background-color: rgba(0, 78, 49, 0.95); /* Verde oscuro, casi opaco */
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 10;
 }
 
-.warpper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.site-header .header-content {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.tab {
-  cursor: pointer;
-  padding: 10px 20px;
-  margin: 0px 2px;
-  background: #3bb056;
-  display: inline-block;
-  color: #fff;
-  border-radius: 3px 3px 0px 0px;
-  box-shadow: 0 0.5rem 0.8rem #00000080;
+.channel-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5em;
+    margin: 0 0 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
 }
 
-.tabc {
-  cursor: pointer;
-  padding: 10px 20px;
-  margin: 0px 2px;
-  background: #fec541;
-  display: inline-block;
-  color: #fff;
-  border-radius: 3px 3px 0px 0px;
-  box-shadow: 0 0.5rem 0.8rem #00000080;
+.tagline {
+    font-size: 1.6em;
+    margin-bottom: 25px;
+    font-weight: 300;
 }
 
-.panels {
-  background: #fff;
-  box-shadow: 0 2rem 2rem #00000080;
-  width: 90%;
-  border-radius: 3px;
-  overflow: hidden;
-  padding: 20px;
+.btn-youtube {
+    display: inline-block;
+    background-color: #ff0000; /* Rojo YouTube */
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 50px; /* Botón redondeado */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.panel {
-  display: none;
-  animation: fadein 0.8s;
+.btn-youtube:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
 }
 
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+/* Contenedor principal del contenido */
+.container {
+    flex: 1; /* Permite que el contenedor principal crezca y ocupe el espacio disponible */
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo casi blanco semi-transparente */
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Sección de introducción / bienvenida */
+.intro-section {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 25px;
+    background-color: #e8f5e9; /* Verde muy claro para la sección */
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.intro-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #005a3e;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.intro-section p {
+    font-size: 1.1em;
+    color: #388e3c; /* Verde medio para el texto */
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Sección de soporte (PayPal) */
+.support-section {
+    background-color: #d4edda; /* Verde claro */
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid #c3e6cb;
+}
+
+.support-section h3 {
+    color: #155724; /* Verde oscuro */
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.support-section p {
+    color: #218838; /* Verde medio */
+    margin-bottom: 20px;
+}
+
+.paypal-form {
+    display: inline-block; /* Para centrar el formulario si es necesario */
+}
+
+.btn-paypal {
+    display: inline-flex; /* Para alinear el icono y el texto */
+    align-items: center;
+    gap: 8px; /* Espacio entre icono y texto */
+    background-color: #0070ba; /* Azul de PayPal */
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-paypal::before {
+    content: " "; /* Pseudo-elemento para el icono de PayPal */
+    display: inline-block;
+    width: 24px; /* Tamaño del icono */
+    height: 24px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%23ffffff" d="M399.7 150.3c-.7-2.5-1.5-5-2.5-7.4-4.5-10.4-12-18.4-22.4-23-11.4-5.3-23.7-6.5-35.8-3.7-18.9 4.3-33 19.3-43.7 34.6-9 12.8-19.4 25.1-30.8 37.3-22 22.8-44.5 45.3-70.6 63.8-18.9 13.5-39.7 20.3-61.7 20.3-24.5 0-46.7-10.4-62.5-27-3.7-3.6-7.5-6.8-11.4-10-18.4-15.6-39.2-22.5-60.8-21.5-23.6 1-45.7 10.9-61.2 28.5-16.7 19.6-26.6 44.7-27.8 70.8-1.5 31.8 11.2 59.8 30.6 83.3 19.2 23.4 43.6 40.7 71.4 51.5 28.9 10.9 59.5 15.6 90.7 13 23-1.9 45.2-10 64.1-25.5 13.7-11.3 26-24.3 36.6-38.3 12.8-17 21.6-36.2 27.5-56.7 2.4-8.3 4.6-16.7 6.3-25.3.6-2.5 1.5-4.8 2.5-7.1 1.7-4.1 3.2-8.3 4.5-12.7 1.2-4.4 2.1-8.9 2.9-13.6 0-.3.1-.6.1-.8 0-.2.1-.4.1-.6.1-.3.1-.6.1-.8.2-1.2.3-2.5.5-3.8.3-2.5.5-5.1.5-7.7.1-2.5.1-5-.1-7.5-.1-2.5-.3-5-.5-7.5-.1-.4-.2-.8-.2-1.2 2.2-4.2 4-8.7 5.3-13.4 1.2-4.7 1.9-9.5 2-14.3.1-4.8-.5-9.6-1.7-14.3-1.2-4.7-2.9-9.3-4.9-13.7zm-26.7-14.3c-2.8 10.5-9.5 20-19.1 27.8-11.1 9.4-25.4 14.5-39.7 14.5-15.9 0-30.8-6.1-42.5-17.7-13.3-13.2-26.6-26.4-39.9-39.5-23.3-22.9-46.7-45.7-72.2-61.7-18.4-11.7-38.2-16.6-58.4-14.9-20.7 1.8-40.4 10.3-54.8 25.1-16.9 16.9-27.1 39.4-28.7 63.8-1.7 26.2 7.7 50.1 23 69.6 14.6 18.7 34.6 32.5 57.3 40.8 23.4 8.2 48.3 11.8 73.6 10.7 19.3-.9 38.2-7.8 54.4-20.5 13.8-10.7 26.3-23.3 37.9-37.4 14.3-17.3 24.3-36.6 29.8-56.5 2.1-7.9 3.8-15.9 5-24 .5-3.5 1-6.9 1.5-10.4 1-3.6 1.7-7.2 2.2-10.9 2-3.6 3.7-7.3 5.1-11.2 1.3-3.9 2.2-7.9 2.7-12 .6-4 .6-8-.1-12c-1.3-4.1-3.2-8-5.7-11.7-2.5-3.6-5.5-7.1-8.9-10.2zM250 512c-138 0-250-112-250-250S112 12 250 12s250 112 250 250-112 250-250 250zM250 36c-129.5 0-234 104.5-234 234s104.5 234 234 234 234-104.5 234-234-104.5-234-234-234z"/></svg>'); /* Icono de PayPal en SVG enlined */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.btn-paypal:hover {
+    background-color: #005a90; /* Azul más oscuro al pasar el mouse */
+    transform: translateY(-2px);
+}
+
+
+/* Contenedor de anuncios */
+.ad-container {
+    margin: 40px auto;
+    text-align: center;
+    padding: 20px;
+    border: 2px dashed #b2dfdb; /* Un verde-azulado sutil */
+    background-color: #f0fdfc; /* Fondo muy claro para el espacio */
+    border-radius: 8px;
+}
+
+/* Sección de descargas (pestañas y contenido) */
+.downloads-section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.tabs-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.tabs-header {
+    display: flex;
+    flex-wrap: wrap; /* Las pestañas se envuelven */
+    justify-content: center;
+    gap: 8px; /* Espacio entre pestañas */
+    margin-bottom: 20px;
 }
 
 .radio {
-  display: none;
+    display: none; /* Oculta los inputs de radio */
 }
 
-#one:checked ~ .panels #one-panel,
-#two:checked ~ .panels #two-panel,
-#three:checked ~ .panels #three-panel,
-#four:checked ~ .panels #four-panel,
-#five:checked ~ .panels #five-panel,
-#six:checked ~ .panels #six-panel,
-#seven:checked ~ .panels #seven-panel,
-#crypto:checked ~ .panels #crypto-panel {
-  display: block;
+.tab-label {
+    cursor: pointer;
+    padding: 12px 25px;
+    background-color: #3bb056; /* Verde estándar para pestañas inactivas */
+    color: #fff;
+    border-radius: 8px; /* Bordes redondeados */
+    font-weight: bold;
+    font-size: 1.05em;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    white-space: nowrap; /* Evita que el texto se rompa */
 }
 
-#one:checked ~ .tabs #one-tab,
-#two:checked ~ .tabs #two-tab,
-#three:checked ~ .tabs #three-tab,
-#four:checked ~ .tabs #four-tab,
-#five:checked ~ .tabs #five-tab,
-#six:checked ~ .tabs #six-tab,
-#seven:checked ~ .tabs #seven-tab {
-  background: #fff;
-  color: #818589;
-  border-top: 3px solid #3bb056;
+.tab-label:hover {
+    background-color: #4CAF50; /* Verde más claro al pasar el mouse */
 }
 
-#crypto:checked ~ .tabs #crypto-tab {
-  background: #fff;
-  color: #818589;
-  border-top: 3px solid #fec541;
+/* Estilos para la pestaña activa */
+#tools:checked ~ .tabs-header #tools-tab {
+    background-color: #fec541; /* Amarillo brillante para Herramientas */
+    color: #424242; /* Texto oscuro para contraste */
+    box-shadow: 0 4px 10px rgba(254, 197, 65, 0.5);
 }
 
-/*Formato Tablas*/
-
-.styled-table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  font-family: sans-serif;
-  min-width: 100%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+#functions:checked ~ .tabs-header #functions-tab,
+#tricks:checked ~ .tabs-header #tricks-tab,
+#excel4:checked ~ .tabs-header #excel4-tab,
+#matrices:checked ~ .tabs-header #matrices-tab,
+#dropdowns:checked ~ .tabs-header #dropdowns-tab,
+#macros:checked ~ .tabs-header #macros-tab {
+    background-color: #007a5e; /* Un verde más oscuro y profesional */
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 122, 94, 0.5);
 }
 
-.styled-table thead tr {
-  background-color: #009879;
-  color: #ffffff;
-  text-align: left;
+.panels-container {
+    background-color: #f9f9f9; /* Fondo muy claro para el contenido de los paneles */
+    padding: 25px;
+    border-radius: 8px;
+    min-height: 500px; /* Asegura un espacio para el contenido */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
-.styled-table th,
-.styled-table td {
-  padding: 12px 15px;
+.panel-content {
+    display: none;
+    animation: fadeIn 0.6s ease-out; /* Animación de aparición */
 }
 
-.styled-table tbody tr {
-  border-bottom: 1px solid #dddddd;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.styled-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
+/* Mostrar panel activo */
+#tools:checked ~ .panels-container #tools-panel,
+#functions:checked ~ .panels-container #functions-panel,
+#tricks:checked ~ .panels-container #tricks-panel,
+#excel4:checked ~ .panels-container #excel4-panel,
+#matrices:checked ~ .panels-container #matrices-panel,
+#dropdowns:checked ~ .panels-container #dropdowns-panel,
+#macros:checked ~ .panels-container #macros-panel {
+    display: block;
 }
 
-.styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+.section-description {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: justify;
 }
 
-.styled-table tbody tr.active-row {
-  font-weight: bold;
-  color: #009879;
+/* Cuadrícula de tarjetas de descarga */
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 25px; /* Espacio entre tarjetas */
 }
 
-.panels h3 {
-  color: #007a5e;
-  text-align: justify;
+.download-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empuja el botón hacia abajo */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.panels p {
-  color: #333;
-  text-align: justify;
+.download-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Estilos para la sección de bienvenida (modificado para tonos verdes) */
-.welcome-section {
-  background-color: #d4edda; /* Un verde muy claro de fondo */
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  text-align: center;
-  margin-bottom: 20px;
-  border: 1px solid #c3e6cb; /* Borde sutil en un tono de verde */
+.download-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #007a5e; /* Verde más oscuro */
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
-.welcome-section h1 {
-  color: #155724; /* Un verde oscuro para el título */
-  font-size: 2.5em;
-  margin-bottom: 15px;
+.download-card p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Permite que la descripción ocupe espacio si es más larga */
 }
 
-.welcome-section .welcome-text,
-.welcome-section .further-text {
-  color: #218838; /* Un verde más brillante para el texto principal */
-  font-size: 1.1em;
-  line-height: 1.6;
-  margin-bottom: 20px;
+.btn-download {
+    display: inline-block;
+    background-color: #fec541; /* Amarillo vibrante */
+    color: #424242; /* Texto oscuro para contraste */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    width: 100%; /* El botón ocupa todo el ancho de la tarjeta */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
 }
 
-.welcome-section .feature-list {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 25px;
+.btn-download:hover {
+    background-color: #e0b033; /* Amarillo más oscuro al pasar el mouse */
+    transform: translateY(-1px);
 }
 
-.welcome-section .feature-list li {
-  color: #218838; /* Otro tono de verde para los items de la lista */
-  font-size: 1em;
-  margin-bottom: 10px;
+/* Estilos para múltiples botones de descarga en una tarjeta */
+.download-card .btn-download + .btn-download {
+    margin-left: 0; /* Elimina margen si hay más de un botón */
+    margin-top: 10px; /* Añade margen vertical */
 }
 
-.welcome-section .feature-list li span[role="img"] {
-  margin-right: 8px;
+
+/* Pie de página */
+.site-footer {
+    background-color: #004d30; /* Verde muy oscuro, casi negro */
+    color: #e0f2f1; /* Verde claro grisáceo */
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 50px; /* Espacio antes del footer */
+    font-size: 0.9em;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.view-downloads-btn {
-  background-color: #28a745; /* Verde brillante para el botón */
-  color: #fff;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.1em;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sutil sombra al botón */
+.site-footer p {
+    margin: 0 0 10px;
 }
 
-.view-downloads-btn:hover {
-  background-color: #1e7e34; /* Tono de verde más oscuro al pasar el ratón */
+.site-footer .footer-links a {
+    color: #a7ffeb; /* Verde azulado claro para enlaces */
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
 }
 
-/* Ocultar las secciones de descarga inicialmente (sin cambios) */
-.warpper {
-  display: none;
+.site-footer .footer-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 992px) {
+    .channel-title {
+        font-size: 2.8em;
+    }
+    .tagline {
+        font-size: 1.4em;
+    }
+    .intro-section h2 {
+        font-size: 2em;
+    }
+    .download-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 20px 15px;
+    }
+    .channel-title {
+        font-size: 2.2em;
+    }
+    .tagline {
+        font-size: 1.2em;
+    }
+    .intro-section {
+        padding: 20px;
+    }
+    .intro-section h2 {
+        font-size: 1.8em;
+    }
+    .intro-section p {
+        font-size: 1em;
+    }
+    .tab-label {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+    .download-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+    }
+    .download-card {
+        padding: 15px;
+    }
+    .support-section {
+        padding: 15px;
+    }
+    .support-section h3 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        padding: 15px 10px;
+    }
+    .channel-title {
+        font-size: 1.8em;
+    }
+    .tagline {
+        font-size: 1em;
+    }
+    .btn-youtube {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    .container {
+        padding: 15px;
+        margin: 15px auto;
+    }
+    .intro-section h2 {
+        font-size: 1.5em;
+    }
+    .intro-section p {
+        font-size: 0.9em;
+    }
+    .tabs-header {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .tab-label {
+        width: 90%; /* Las pestañas ocupan casi todo el ancho */
+        text-align: center;
+        border-radius: 8px; /* Completamente redondeadas */
+    }
 }
